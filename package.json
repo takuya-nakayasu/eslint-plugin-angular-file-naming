@@ -1,0 +1,41 @@
+{
+  "name": "eslint-plugin-angular-file-naming",
+  "version": "0.0.1",
+  "description": "ESLint plugin for Angular file naming conventions",
+  "author": {
+    "name": "Takuya Nakayasu",
+    "email": "l08084.1989@gmail.com",
+    "url": "https://github.com/l08084"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/l08084/eslint-plugin-angular-file-naming.git"
+  },
+  "homepage": "https://github.com/l08084/eslint-plugin-angular-file-naming",
+  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "lint": "npx eslint . --ext .ts",
+    "test": "jest",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "devDependencies": {
+    "@types/jest": "26.0.23",
+    "@typescript-eslint/eslint-plugin": "4.26.0",
+    "@typescript-eslint/experimental-utils": "4.25.0",
+    "@typescript-eslint/parser": "4.26.0",
+    "eslint": "7.28.0",
+    "jest": "27.0.4",
+    "prettier": "2.3.0",
+    "rimraf": "3.0.2",
+    "ts-jest": "27.0.2",
+    "typescript": "4.3.2"
+  }
+}
