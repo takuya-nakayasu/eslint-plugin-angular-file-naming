@@ -1,6 +1,6 @@
 import { TSESLint } from '@typescript-eslint/experimental-utils';
 
-const STYLE_GUIDE_LINK = 'https://angular.io/styleguide#style-02-03';
+const STYLE_GUIDE_LINK = 'https://angular.io/guide/styleguide#style-02-03';
 
 const COMPONENT_CLASS_DECORATOR =
   'ClassDeclaration > Decorator[expression.callee.name="Component"]';
