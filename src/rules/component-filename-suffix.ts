@@ -2,6 +2,9 @@ import { TSESLint } from '@typescript-eslint/experimental-utils';
 
 const STYLE_GUIDE_LINK = 'https://angular.io/styleguide#style-02-03';
 
+const COMPONENT_CLASS_DECORATOR =
+  'ClassDeclaration > Decorator[expression.callee.name="Component"]';
+
 export const componentFilenameSuffix: TSESLint.RuleModule<
   'componentFilenameSuffix',
   []
@@ -21,9 +24,7 @@ export const componentFilenameSuffix: TSESLint.RuleModule<
   },
   create: (context) => {
     return {
-      'ClassDeclaration > Decorator[(expression.callee.name = "Component")]'(
-        node
-      ) {
+      [COMPONENT_CLASS_DECORATOR](node) {
         console.log(node);
       },
     };

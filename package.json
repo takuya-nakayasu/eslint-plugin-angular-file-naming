@@ -24,6 +24,7 @@
     "clean": "rimraf dist",
     "lint": "npx eslint . --ext .ts",
     "test": "jest",
+    "test-sample": "eslint src/samples/sample.ts",
     "prepublishOnly": "npm run clean && npm run build"
   },
   "devDependencies": {
@@ -32,6 +33,7 @@
     "@typescript-eslint/experimental-utils": "4.25.0",
     "@typescript-eslint/parser": "4.26.0",
     "eslint": "7.28.0",
+    "eslint-plugin-rulesdir": "0.2.0",
     "jest": "27.0.4",
     "prettier": "2.3.0",
     "rimraf": "3.0.2",
