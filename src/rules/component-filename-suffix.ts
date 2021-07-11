@@ -1,4 +1,4 @@
-import { TSESLint } from '@typescript-eslint/experimental-utils';
+import { TSESLint, TSESTree } from '@typescript-eslint/experimental-utils';
 
 const STYLE_GUIDE_LINK = 'https://angular.io/guide/styleguide#style-02-03';
 
@@ -20,11 +20,24 @@ export const componentFilenameSuffix: TSESLint.RuleModule<
     messages: {
       componentFilenameSuffix: `Component class names should end with one of these suffixes: {{suffixes}} (${STYLE_GUIDE_LINK})`,
     },
-    schema: [],
+    schema: [
+      {
+        type: 'object',
+        properties: {
+          suffixes: {
+            type: 'array',
+            items: {
+              type: 'string',
+            },
+          },
+        },
+        additionalProperties: false,
+      },
+    ],
   },
   create: (context) => {
     return {
-      [COMPONENT_CLASS_DECORATOR](node) {
+      [COMPONENT_CLASS_DECORATOR](node: TSESTree.Decorator) {
         console.log(node);
       },
     };
