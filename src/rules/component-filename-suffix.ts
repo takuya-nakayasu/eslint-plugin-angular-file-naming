@@ -39,6 +39,8 @@ export const componentFilenameSuffix: TSESLint.RuleModule<
     return {
       [COMPONENT_CLASS_DECORATOR](node: TSESTree.Decorator) {
         console.log(node);
+        const filename = context.getFilename();
+        console.log(filename);
       },
     };
   },
