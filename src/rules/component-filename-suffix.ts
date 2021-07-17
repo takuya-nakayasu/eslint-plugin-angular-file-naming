@@ -1,13 +1,19 @@
 import { TSESLint, TSESTree } from '@typescript-eslint/experimental-utils';
 
+type Options = { suffixes: string[] };
+
 const STYLE_GUIDE_LINK = 'https://angular.io/guide/styleguide#style-02-03';
 
 const COMPONENT_CLASS_DECORATOR =
   'ClassDeclaration > Decorator[expression.callee.name="Component"]';
 
+function getFilenameSuffix(filename: string): RegExpMatchArray | null {
+  return filename.match(/(?:\/|\\).+\.(.+)\.ts$/);
+}
+
 export const componentFilenameSuffix: TSESLint.RuleModule<
   'componentFilenameSuffix',
-  []
+  [Options]
 > = {
   meta: {
     type: 'suggestion',
@@ -38,9 +44,20 @@ export const componentFilenameSuffix: TSESLint.RuleModule<
   create: (context) => {
     return {
       [COMPONENT_CLASS_DECORATOR](node: TSESTree.Decorator) {
-        console.log(node);
         const filename = context.getFilename();
-        console.log(filename);
+        const suffixes = context.options[0]?.suffixes || ['component'];
+        const filenameSuffix = getFilenameSuffix(filename);
+        if (
+          !filenameSuffix ||
+          !(filename.length > 1) ||
+          !suffixes.find((suffix) => suffix === filenameSuffix[1])
+        ) {
+          context.report({
+            node,
+            messageId: 'componentFilenameSuffix',
+            data: { suffixes },
+          });
+        }
       },
     };
   },
