@@ -49,7 +49,7 @@ export const componentFilenameSuffix: TSESLint.RuleModule<
         const filenameSuffix = getFilenameSuffix(filename);
         if (
           !filenameSuffix ||
-          !(filename.length > 1) ||
+          !(filenameSuffix.length > 1) ||
           !suffixes.find((suffix) => suffix === filenameSuffix[1])
         ) {
           context.report({
