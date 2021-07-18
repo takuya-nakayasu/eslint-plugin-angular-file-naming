@@ -1,5 +1,5 @@
 import { TSESLint, TSESTree } from '@typescript-eslint/experimental-utils';
-import { COMPONENT_CLASS_DECORATOR, STYLE_GUIDE_LINK } from '../utils/utils';
+import { DIRECTIVE_CLASS_DECORATOR, STYLE_GUIDE_LINK } from '../utils/utils';
 
 type Options = { suffixes: string[] };
 
@@ -13,8 +13,8 @@ function getFilenameSuffix(filename: string): RegExpMatchArray | null {
   return filename.match(/(?:\/|\\).+\.(.+)\.ts$/);
 }
 
-export const componentFilenameSuffix: TSESLint.RuleModule<
-  'componentFilenameSuffix',
+export const directiveFilenameSuffix: TSESLint.RuleModule<
+  'directiveFilenameSuffix',
   [Options]
 > = {
   meta: {
@@ -26,7 +26,7 @@ export const componentFilenameSuffix: TSESLint.RuleModule<
       url: 'https://github.com/l08084/eslint-plugin-ionic-tappable/blob/main/docs/rules/click-events-have-tappable.md',
     },
     messages: {
-      componentFilenameSuffix: `The file name of component class should end with one of these suffixes: {{suffixes}} (${STYLE_GUIDE_LINK})`,
+      directiveFilenameSuffix: `The file name of component class should end with one of these suffixes: {{suffixes}} (${STYLE_GUIDE_LINK})`,
     },
     schema: [
       {
@@ -45,7 +45,7 @@ export const componentFilenameSuffix: TSESLint.RuleModule<
   },
   create: (context) => {
     return {
-      [COMPONENT_CLASS_DECORATOR](node: TSESTree.Decorator) {
+      [DIRECTIVE_CLASS_DECORATOR](node: TSESTree.Decorator) {
         const filename = context.getFilename();
         const suffixes = context.options[0]?.suffixes || ['component'];
         const filenameSuffix = getFilenameSuffix(filename);
@@ -56,7 +56,7 @@ export const componentFilenameSuffix: TSESLint.RuleModule<
         ) {
           context.report({
             node,
-            messageId: 'componentFilenameSuffix',
+            messageId: 'directiveFilenameSuffix',
             data: { suffixes },
           });
         }
@@ -65,5 +65,5 @@ export const componentFilenameSuffix: TSESLint.RuleModule<
   },
 };
 
-module.exports = componentFilenameSuffix;
-export default componentFilenameSuffix;
+module.exports = directiveFilenameSuffix;
+export default directiveFilenameSuffix;
