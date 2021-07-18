@@ -9,92 +9,85 @@ tester.run('directiveFilenameSuffix', directiveFilenameSuffix, {
   valid: [
     {
       code: `
-        @Component({
-      selector: 'sg-foo-bar',
-      templateUrl: './test.component.html',
-    })
-    class TestComponent {}
-  `,
-      filename: '/src/app/test.component.ts',
-    },
-    {
-      code: `
-        @Component({
-      selector: 'sg-foo-bar',
-      templateUrl: './test.component.html',
-    })
-    class TestComponent {}
-  `,
-      filename: '/src/app/test.component.ts',
-      options: [{ suffixes: ['component', 'page'] }],
-    },
-    {
-      code: `
-        @Component({
-      selector: 'sg-foo-bar',
-      templateUrl: './test.page.html',
-    })
-    class TestComponent {}
-  `,
-      filename: '/src/app/test.page.ts',
-      options: [{ suffixes: ['component', 'page'] }],
-    },
-    {
-      code: `
-        @Component({
-      selector: 'sg-foo-bar',
-      templateUrl: './test.page.html',
-    })
-    class TestPage {}
-  `,
-      filename: '/src/app/test.page.ts',
-      options: [{ suffixes: ['page'] }],
-    },
-    {
-      code: `
     @Directive({
-      selector: '[myHighlight]'
+      selector: 'sgBarFoo'
     })
     class TestDirective {}
   `,
       filename: '/src/app/test.directive.ts',
-      options: [{ suffixes: ['page'] }],
+    },
+    {
+      code: `
+    @Directive({
+      selector: 'sgBarFoo'
+    })
+    class TestDirective {}
+  `,
+      filename: '/src/app/test.directive.ts',
+      options: [{ suffixes: ['directive', 'validator'] }],
+    },
+    {
+      code: `
+    @Directive({
+      selector: 'sgBarFoo'
+    })
+    class TestValidator {}
+  `,
+      filename: '/src/app/test.validator.ts',
+      options: [{ suffixes: ['directive', 'validator'] }],
+    },
+    {
+      code: `
+    @Pipe({
+      name: 'sgPipe'
+    })
+    class TestPipe {}
+  `,
+      filename: '/src/app/test.pipe.ts',
+      options: [{ suffixes: ['directive'] }],
+    },
+    {
+      code: `
+    @Component({
+      selector: 'sg-bar-foo'
+    })
+    class TestComponent {}
+  `,
+      filename: '/src/app/test.component.ts',
+      options: [{ suffixes: ['directive'] }],
     },
   ],
   invalid: [
     {
       code: `
-        @Component({
-      selector: 'sg-foo-bar',
-      templateUrl: './test.component.html',
-    })
-    class TestComponent {}
+        @Directive({
+          selector: 'sg-foo-bar'
+        })
+        class Test {}
   `,
-      filename: '/src/app/test.components.ts',
+      filename: '/src/app/test.ts',
       errors: [{ messageId: 'directiveFilenameSuffix' }],
     },
     {
       code: `
-        @Component({
-      selector: 'sg-foo-bar',
-      templateUrl: './test.view.html',
-    })
-    class TestView {}
+        @Directive({
+          selector: 'sg-foo-bar'
+        })
+        class TestDirectivePage implements AsyncValidator {}
   `,
-      filename: '/src/app/test.view.ts',
-      options: [{ suffixes: ['component', 'page'] }],
+      filename: '/src/app/test.page.ts',
+      options: [{ suffixes: ['directive', 'validator'] }],
       errors: [{ messageId: 'directiveFilenameSuffix' }],
     },
     {
       code: `
-        @Component({
-      selector: 'sg-foo-bar',
-      templateUrl: './test.component.html',
-    })
-    class TestComponent {}
+        @Directive({
+          selector: 'sgBarFoo'
+        })
+        class TestPageDirective {}
   `,
-      filename: '/src/app/test.component.ts',
-      options: [{ suffixes: ['view', 'page'] }],
+      filename: '/src/app/test.directive.ts',
+      options: [{ suffixes: ['page'] }],
       errors: [{ messageId: 'directiveFilenameSuffix' }],
     },
   ],
