@@ -1,17 +1,11 @@
 import { TSESLint, TSESTree } from '@typescript-eslint/experimental-utils';
-import { DIRECTIVE_CLASS_DECORATOR, STYLE_GUIDE_LINK } from '../utils/utils';
+import {
+  DIRECTIVE_CLASS_DECORATOR,
+  getFilenameSuffix,
+  STYLE_GUIDE_LINK,
+} from '../utils/utils';
 
 type Options = { suffixes: string[] };
-
-/**
- * get filename suffix
- *
- * @param {string} filename
- * @returns {(RegExpMatchArray | null)}
- */
-function getFilenameSuffix(filename: string): RegExpMatchArray | null {
-  return filename.match(/(?:\/|\\).+\.(.+)\.ts$/);
-}
 
 export const directiveFilenameSuffix: TSESLint.RuleModule<
   'directiveFilenameSuffix',
@@ -47,7 +41,7 @@ export const directiveFilenameSuffix: TSESLint.RuleModule<
     return {
       [DIRECTIVE_CLASS_DECORATOR](node: TSESTree.Decorator) {
         const filename = context.getFilename();
-        const suffixes = context.options[0]?.suffixes || ['component'];
+        const suffixes = context.options[0]?.suffixes || ['directive'];
         const filenameSuffix = getFilenameSuffix(filename);
         if (
           !filenameSuffix ||

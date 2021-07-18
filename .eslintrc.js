@@ -7,10 +7,14 @@ module.exports = {
   plugins: ['@typescript-eslint', 'rulesdir'],
   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
   rules: {
-    // 'rulesdir/component-filename-suffix': [
-    //   'error',
-    //   { suffixes: ['component', 'comp'] },
-    // ],
-    'rulesdir/component-filename-suffix': 'error',
+    'rulesdir/component-filename-suffix': [
+      'error',
+      { suffixes: ['component', 'comp'] },
+    ],
+    'rulesdir/directive-filename-suffix': [
+      'error',
+      { suffixes: ['directive'] },
+    ],
+    // 'rulesdir/component-filename-suffix': 'error',
   },
 };

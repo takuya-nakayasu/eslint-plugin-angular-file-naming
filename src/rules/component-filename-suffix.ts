@@ -1,17 +1,11 @@
 import { TSESLint, TSESTree } from '@typescript-eslint/experimental-utils';
-import { COMPONENT_CLASS_DECORATOR, STYLE_GUIDE_LINK } from '../utils/utils';
+import {
+  COMPONENT_CLASS_DECORATOR,
+  getFilenameSuffix,
+  STYLE_GUIDE_LINK,
+} from '../utils/utils';
 
 type Options = { suffixes: string[] };
-
-/**
- * get filename suffix
- *
- * @param {string} filename
- * @returns {(RegExpMatchArray | null)}
- */
-function getFilenameSuffix(filename: string): RegExpMatchArray | null {
-  return filename.match(/(?:\/|\\).+\.(.+)\.ts$/);
-}
 
 export const componentFilenameSuffix: TSESLint.RuleModule<
   'componentFilenameSuffix',

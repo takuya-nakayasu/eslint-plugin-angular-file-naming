@@ -6,3 +6,14 @@ export const DIRECTIVE_CLASS_DECORATOR =
 
 export const STYLE_GUIDE_LINK =
   'https://angular.io/guide/styleguide#style-02-03';
+
+/**
+ * get filename suffix
+ *
+ * @export
+ * @param {string} filename
+ * @returns {(RegExpMatchArray | null)}
+ */
+export function getFilenameSuffix(filename: string): RegExpMatchArray | null {
+  return filename.match(/(?:\/|\\).+\.(.+)\.ts$/);
+}
