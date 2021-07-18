@@ -1,80 +1,51 @@
-# Enforces components to have a specified suffix (`component-class-suffix`)
+# Enforces the file name of components to have a specified suffix (`component-filename-suffix`)
 
-This rule enforces that classes decorated with @Component must have suffix "Component" (or custom) in their name.
+This rule enforces that file name of classes decorated with @Component must have suffix "component" (or custom) in their name.
 
 ## Rule Details
 
 This rule follows the recommendation from the [Angular styleguide](https://angular.io/guide/styleguide#style-02-03).
 
-Examples of **incorrect** code for this rule (with default configuration):
+Examples of **incorrect** file name for this rule (with default configuration):
 
-```ts
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-})
-class App {}
+```
+app.page.ts
+app.view.ts
+app.comp.ts
 ```
 
-Example of **correct** code for this rule:
+Example of **correct** file name for this rule:
 
-```ts
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-})
-class AppComponent {}
+```
+app.component.ts
 ```
 
 ## Options
 
-By default, the suffix will be `Component`. You may pass an array of suffixes, for example:
+By default, the suffix will be `component`. You may pass an array of suffixes, for example:
 
 ```json
 {
-  "@angular-eslint/component-class-suffix": [
+  "angular-file-naming/component-filename-suffix": [
     "error",
     {
-      "suffixes": ["Component", "Comp"]
+      "suffixes": ["component", "page", "view"]
     }
   ]
 }
 ```
 
-Examples of **incorrect** code with the above options:
+Examples of **incorrect** file name with the above options:
 
-```ts
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-})
-export class AppCompe {}
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-})
-export class App {}
+```
+app.comp.ts
+app.com.ts
 ```
 
-Example of **correct** code with the above options:
+Example of **correct** file name with the above options:
 
-```ts
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-})
-export class AppComp {}
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-})
-export class AppComponent {}
+```
+app.component.ts
+app.page.ts
+app.view.ts
 ```
