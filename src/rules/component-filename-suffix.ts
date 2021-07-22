@@ -17,7 +17,7 @@ export const componentFilenameSuffix: TSESLint.RuleModule<
       category: 'Best Practices',
       description: `The file name of Classes decorated with @Component must have suffix "component" (or custom) in their name. See more at ${STYLE_GUIDE_LINK}`,
       recommended: 'error',
-      url: 'https://github.com/l08084/eslint-plugin-ionic-tappable/blob/main/docs/rules/click-events-have-tappable.md',
+      url: 'https://github.com/l08084/eslint-plugin-angular-file-naming/blob/main/docs/rules/component-filename-suffix.md',
     },
     messages: {
       componentFilenameSuffix: `The file name of component class should end with one of these suffixes: {{suffixes}} (${STYLE_GUIDE_LINK})`,
