@@ -9,8 +9,8 @@ This rule follows the recommendation from the [Angular styleguide](https://angul
 Examples of **incorrect** file name for this rule (with default configuration):
 
 ```
-test.dire.ts
-test.validator.ts
+test.pip.ts
+test.filter.ts
 ```
 
 Example of **correct** file name for this rule:
@@ -28,7 +28,7 @@ By default, the suffix will be `pipe`. You may pass an array of suffixes, for ex
   "angular-file-naming/pipe-filename-suffix": [
     "error",
     {
-      "suffixes": ["pipe", "validator"]
+      "suffixes": ["pipe", "filter"]
     }
   ]
 }
@@ -37,13 +37,13 @@ By default, the suffix will be `pipe`. You may pass an array of suffixes, for ex
 Examples of **incorrect** file name with the above options:
 
 ```
-test.direc.ts
-test.dire.ts
+test.pip.ts
+test.p.ts
 ```
 
 Example of **correct** file name with the above options:
 
 ```
 test.pipe.ts
-test.validator.ts
+test.filter.ts
 ```

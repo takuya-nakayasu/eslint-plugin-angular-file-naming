@@ -9,12 +9,32 @@ tester.run('pipeFilenameSuffix', pipeFilenameSuffix, {
   valid: [
     {
       code: `
-    @Directive({
-      selector: 'sgBarFoo'
-    })
-    class TestDirective {}
+        @Pipe({
+          name: 'ngBarFoo'
+        })
+        class Test {}
   `,
       filename: '/src/app/test.pipe.ts',
+    },
+    {
+      code: `
+        @Pipe({
+          name: 'ngBarFoo'
+        })
+        class Test {}
+  `,
+      filename: '/src/app/test.pipe.ts',
+      options: [{ suffixes: ['pipe', 'pip'] }],
+    },
+    {
+      code: `
+        @Pipe({
+          name: 'ngBarFoo'
+        })
+        class Test {}
+  `,
+      filename: '/src/app/test.pip.ts',
+      options: [{ suffixes: ['pipe', 'pip'] }],
     },
     {
       code: `
@@ -23,27 +43,7 @@ tester.run('pipeFilenameSuffix', pipeFilenameSuffix, {
     })
     class TestDirective {}
   `,
-      filename: '/src/app/test.pipe.ts',
-      options: [{ suffixes: ['pipe', 'validator'] }],
-    },
-    {
-      code: `
-    @Directive({
-      selector: 'sgBarFoo'
-    })
-    class TestValidator {}
-  `,
-      filename: '/src/app/test.validator.ts',
-      options: [{ suffixes: ['pipe', 'validator'] }],
-    },
-    {
-      code: `
-    @Pipe({
-      name: 'sgPipe'
-    })
-    class TestPipe {}
-  `,
-      filename: '/src/app/test.pipe.ts',
+      filename: '/src/app/test.directive.ts',
       options: [{ suffixes: ['pipe'] }],
     },
     {
@@ -60,8 +60,8 @@ tester.run('pipeFilenameSuffix', pipeFilenameSuffix, {
   invalid: [
     {
       code: `
-        @Directive({
-          selector: 'sg-foo-bar'
+        @Pipe({
+          name: 'ngBarFoo'
         })
         class Test {}
   `,
@@ -70,24 +70,24 @@ tester.run('pipeFilenameSuffix', pipeFilenameSuffix, {
     },
     {
       code: `
-        @Directive({
-          selector: 'sg-foo-bar'
+        @Pipe({
+          name: 'ngBarFoo'
         })
-        class TestDirectivePage implements AsyncValidator {}
+        class Test {}
   `,
-      filename: '/src/app/test.page.ts',
-      options: [{ suffixes: ['pipe', 'validator'] }],
+      filename: '/src/app/test.p.ts',
+      options: [{ suffixes: ['pipe', 'pip'] }],
       errors: [{ messageId: 'pipeFilenameSuffix' }],
     },
     {
       code: `
-        @Directive({
-          selector: 'sgBarFoo'
+        @Pipe({
+          name: 'ngBarFoo'
         })
-        class TestPageDirective {}
+        class Test {}
   `,
       filename: '/src/app/test.pipe.ts',
-      options: [{ suffixes: ['page'] }],
+      options: [{ suffixes: ['filter'] }],
       errors: [{ messageId: 'pipeFilenameSuffix' }],
     },
   ],
