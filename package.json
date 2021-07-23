@@ -16,7 +16,8 @@
   "keywords": [
     "eslint",
     "eslintplugin",
-    "eslint-plugin"
+    "eslint-plugin",
+    "angular"
   ],
   "main": "dist/index.js",
   "scripts": {
