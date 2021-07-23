@@ -13,6 +13,9 @@ export const STYLE_GUIDE_LINK =
 export const MODULE_CLASS_DECORATOR =
   'ClassDeclaration > Decorator[expression.callee.name="NgModule"]';
 
+export const INJECTABLE_CLASS_DECORATOR =
+  'ClassDeclaration > Decorator[expression.callee.name="Injectable"]';
+
 /**
  * get filename suffix
  *
