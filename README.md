@@ -1,12 +1,20 @@
 # eslint-plugin-angular-file-naming
 
-An ESLint plugin that enforce the filename appropriate suffix (such as `.component.ts`, `.directive.ts`, `.module.ts`, `.pipe.ts`, or `.service.ts`).
-
 [![npm version](https://img.shields.io/npm/v/eslint-plugin-angular-file-naming.svg)](https://www.npmjs.com/package/eslint-plugin-angular-file-naming)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Twitter](https://img.shields.io/twitter/follow/l08084?style=social)](https://twitter.com/l08084)
 
+An ESLint plugin that enforce the filename to have a appropriate suffix (such as `.component.ts`, `.directive.ts`, `.module.ts`, `.pipe.ts`, or `.service.ts`).
+
 **Please note**: This plugin will only lint the filenames of the `.ts` files you are linting with eslint. It will ignore other files that are not linted with eslint.
+
+| File type | Appropriate suffix of the filename |
+| --------- | ---------------------------------- |
+| Component | `.component.ts`                    |
+| Directive | `.directive.ts`                    |
+| Module    | `.module.ts`                       |
+| Pipe      | `.pipe.ts`                         |
+| Service   | `.service.ts`                      |
 
 ## Installation
 
@@ -55,18 +63,55 @@ module.exports = {
 
 ## Examples
 
-Examples of **incorrect** code:
-
-```html
-<div (click)="doClick()">I am clickable!</div>
+```js
+// .eslintrc.json
+module.exports = {
+  "plugins": [
+    ...,
+    "angular-file-naming"
+  ],
+  "rules": [
+    ...,
+    "angular-file-naming/component-filename-suffix": [
+      "error",
+      {
+        "suffixes": ["component", "page", "view"]
+      }
+    ],
+    "angular-file-naming/directive-filename-suffix": "error",
+    "angular-file-naming/module-filename-suffix": "error",
+    "angular-file-naming/pipe-filename-suffix": "error",
+    "angular-file-naming/service-filename-suffix": [
+      "error",
+      {
+        "suffixes": ["service", "guard", "store"]
+      }
+    ],
+  ]
+  ...,
+}
 ```
 
-Examples of **correct** code:
+Examples of **incorrect** file name with the above configuration:
 
-```html
-<div tappable (click)="doClick()">I am clickable!</div>
+```
+app.comp.ts
+sample.ts
+test.filter.ts
+```
 
-<button (click)="doClick()">I am clickable!</button>
+Example of **correct** file name with the above configuration:
+
+```
+app.component.ts
+app.page.ts
+app.view.ts
+test.directive.ts
+app.module.ts
+sample.pipe.ts
+test.service.ts
+test.guard.ts
+test.store.ts
 ```
 
 ## License
