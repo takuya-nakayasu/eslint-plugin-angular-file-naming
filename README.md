@@ -63,6 +63,8 @@ module.exports = {
 
 ## Examples
 
+For example:
+
 ```js
 // .eslintrc.json
 module.exports = {
