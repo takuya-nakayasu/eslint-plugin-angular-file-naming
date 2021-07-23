@@ -1,6 +1,6 @@
 # eslint-plugin-angular-file-naming
 
-An ESLint plugin that click must be accompanied by `tappable`, except for `<button>`, `<ion-button>` and `<a>`.
+An ESLint plugin that enforce the filename appropriate suffix (such as `.component.ts`, `.directive.ts`, `.module.ts`, `.pipe.ts`, or `.service.ts`).
 
 [![npm version](https://img.shields.io/npm/v/eslint-plugin-angular-file-naming.svg)](https://www.npmjs.com/package/eslint-plugin-angular-file-naming)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -33,7 +33,11 @@ module.exports = {
   ],
   "rules": [
     ...,
-    "angular-file-naming/component-filename-suffix": "error"
+    "angular-file-naming/component-filename-suffix": "error",
+    "angular-file-naming/directive-filename-suffix": "error",
+    "angular-file-naming/module-filename-suffix": "error",
+    "angular-file-naming/pipe-filename-suffix": "error",
+    "angular-file-naming/service-filename-suffix": "error",
   ]
   ...,
 }
