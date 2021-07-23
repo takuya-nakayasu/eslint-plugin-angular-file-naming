@@ -10,6 +10,9 @@ export const PIPE_CLASS_DECORATOR =
 export const STYLE_GUIDE_LINK =
   'https://angular.io/guide/styleguide#style-02-03';
 
+export const MODULE_CLASS_DECORATOR =
+  'ClassDeclaration > Decorator[expression.callee.name="NgModule"]';
+
 /**
  * get filename suffix
  *
