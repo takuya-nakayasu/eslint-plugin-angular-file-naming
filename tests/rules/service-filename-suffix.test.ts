@@ -9,32 +9,32 @@ tester.run('serviceFilenameSuffix', serviceFilenameSuffix, {
   valid: [
     {
       code: `
-        @Pipe({
-          name: 'ngBarFoo'
-        })
-        class Test {}
+@Injectable({
+  providedIn: 'root',
+})
+export class TestService {}
   `,
       filename: '/src/app/test.service.ts',
     },
     {
       code: `
-        @Pipe({
-          name: 'ngBarFoo'
-        })
-        class Test {}
+@Injectable({
+  providedIn: 'root',
+})
+export class TestService {}
   `,
       filename: '/src/app/test.service.ts',
-      options: [{ suffixes: ['service', 'pip'] }],
+      options: [{ suffixes: ['service', 'guard'] }],
     },
     {
       code: `
-        @Pipe({
-          name: 'ngBarFoo'
-        })
-        class Test {}
+@Injectable({
+  providedIn: 'root',
+})
+export class TestGuard {}
   `,
-      filename: '/src/app/test.pip.ts',
-      options: [{ suffixes: ['service', 'pip'] }],
+      filename: '/src/app/test.guard.ts',
+      options: [{ suffixes: ['service', 'guard'] }],
     },
     {
       code: `
@@ -60,34 +60,34 @@ tester.run('serviceFilenameSuffix', serviceFilenameSuffix, {
   invalid: [
     {
       code: `
-        @Pipe({
-          name: 'ngBarFoo'
-        })
-        class Test {}
+@Injectable({
+  providedIn: 'root',
+})
+export class Test {}
   `,
       filename: '/src/app/test.ts',
       errors: [{ messageId: 'serviceFilenameSuffix' }],
     },
     {
       code: `
-        @Pipe({
-          name: 'ngBarFoo'
-        })
-        class Test {}
+@Injectable({
+  providedIn: 'root',
+})
+export class TestGuard {}
   `,
-      filename: '/src/app/test.p.ts',
-      options: [{ suffixes: ['service', 'pip'] }],
+      filename: '/src/app/test.g.ts',
+      options: [{ suffixes: ['service', 'guard'] }],
       errors: [{ messageId: 'serviceFilenameSuffix' }],
     },
     {
       code: `
-        @Pipe({
-          name: 'ngBarFoo'
-        })
-        class Test {}
+@Injectable({
+  providedIn: 'root',
+})
+export class TestService {}
   `,
       filename: '/src/app/test.service.ts',
-      options: [{ suffixes: ['filter'] }],
+      options: [{ suffixes: ['guard'] }],
       errors: [{ messageId: 'serviceFilenameSuffix' }],
     },
   ],

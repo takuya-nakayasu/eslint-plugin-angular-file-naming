@@ -9,8 +9,8 @@ This rule follows the recommendation from the [Angular styleguide](https://angul
 Examples of **incorrect** file name for this rule (with default configuration):
 
 ```
-test.pip.ts
-test.filter.ts
+test.guard.ts
+test.store.ts
 ```
 
 Example of **correct** file name for this rule:
@@ -28,7 +28,7 @@ By default, the suffix will be `service`. You may pass an array of suffixes, for
   "angular-file-naming/service-filename-suffix": [
     "error",
     {
-      "suffixes": ["service", "filter"]
+      "suffixes": ["service", "guard", "store"]
     }
   ]
 }
@@ -37,13 +37,14 @@ By default, the suffix will be `service`. You may pass an array of suffixes, for
 Examples of **incorrect** file name with the above options:
 
 ```
-test.pip.ts
-test.p.ts
+test.action.ts
+test.component.ts
 ```
 
 Example of **correct** file name with the above options:
 
 ```
 test.service.ts
-test.filter.ts
+test.guard.ts
+test.store.ts
 ```
