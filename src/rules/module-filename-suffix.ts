@@ -17,7 +17,7 @@ export const moduleFilenameSuffix: TSESLint.RuleModule<
       category: 'Best Practices',
       description: `The file name of Classes decorated with @NgModule must have suffix "module" (or custom) in their name. See more at ${STYLE_GUIDE_LINK}`,
       recommended: 'error',
-      url: 'https://github.com/l08084/eslint-plugin-angular-file-naming/blob/main/docs/rules/module-filename-suffix.md',
+      url: 'https://github.com/takuya-nakayasu/eslint-plugin-angular-file-naming/blob/main/docs/rules/module-filename-suffix.md',
     },
     messages: {
       moduleFilenameSuffix: `The file name of module class should end with one of these suffixes: {{suffixes}} (${STYLE_GUIDE_LINK})`,

@@ -17,7 +17,7 @@ export const directiveFilenameSuffix: TSESLint.RuleModule<
       category: 'Best Practices',
       description: `The file name of Classes decorated with @Directive must have suffix "directive" (or custom) in their name. See more at ${STYLE_GUIDE_LINK}`,
       recommended: 'error',
-      url: 'https://github.com/l08084/eslint-plugin-angular-file-naming/blob/main/docs/rules/directive-filename-suffix.md',
+      url: 'https://github.com/takuya-nakayasu/eslint-plugin-angular-file-naming/blob/main/docs/rules/directive-filename-suffix.md',
     },
     messages: {
       directiveFilenameSuffix: `The file name of directive class should end with one of these suffixes: {{suffixes}} (${STYLE_GUIDE_LINK})`,

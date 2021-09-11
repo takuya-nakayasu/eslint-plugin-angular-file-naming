@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/eslint-plugin-angular-file-naming.svg)](https://www.npmjs.com/package/eslint-plugin-angular-file-naming)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Twitter](https://img.shields.io/twitter/follow/l08084?style=social)](https://twitter.com/l08084)
+[![Twitter](https://img.shields.io/twitter/follow/takuya_nakayasu?style=social)](https://twitter.com/takuya_nakayasu)
 
 An ESLint plugin that enforce the filename to have a appropriate suffix (such as `.component.ts`, `.directive.ts`, `.module.ts`, `.pipe.ts`, or `.service.ts`).
 

@@ -17,7 +17,7 @@ export const serviceFilenameSuffix: TSESLint.RuleModule<
       category: 'Best Practices',
       description: `The file name of Classes decorated with @Injectable must have suffix "service" (or custom) in their name. See more at ${STYLE_GUIDE_LINK}`,
       recommended: 'error',
-      url: 'https://github.com/l08084/eslint-plugin-angular-file-naming/blob/main/docs/rules/service-filename-suffix.md',
+      url: 'https://github.com/takuya-nakayasu/eslint-plugin-angular-file-naming/blob/main/docs/rules/service-filename-suffix.md',
     },
     messages: {
       serviceFilenameSuffix: `The file name of service class should end with one of these suffixes: {{suffixes}} (${STYLE_GUIDE_LINK})`,
