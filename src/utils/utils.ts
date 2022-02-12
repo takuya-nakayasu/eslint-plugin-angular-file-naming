@@ -26,3 +26,7 @@ export const INJECTABLE_CLASS_DECORATOR =
 export function getFilenameSuffix(filename: string): RegExpMatchArray | null {
   return filename.match(/(?:\/|\\).+\.(.+)\.ts$/);
 }
+
+export function isTestFile(filenameSuffix: RegExpMatchArray | null): boolean {
+  return !!(filenameSuffix && filenameSuffix.length > 1 && filenameSuffix[1] === 'spec');
+}

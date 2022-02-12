@@ -3,6 +3,7 @@ import {
   getFilenameSuffix,
   STYLE_GUIDE_LINK,
   INJECTABLE_CLASS_DECORATOR,
+  isTestFile,
 } from '../utils/utils';
 
 type Options = { suffixes: string[] };
@@ -43,6 +44,9 @@ export const serviceFilenameSuffix: TSESLint.RuleModule<
         const filename = context.getFilename();
         const suffixes = context.options[0]?.suffixes || ['service'];
         const filenameSuffix = getFilenameSuffix(filename);
+        if (isTestFile(filenameSuffix)) {
+          return;
+        }
         if (
           !filenameSuffix ||
           !(filenameSuffix.length > 1) ||

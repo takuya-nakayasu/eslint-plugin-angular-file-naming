@@ -60,6 +60,16 @@ tester.run('componentFilenameSuffix', componentFilenameSuffix, {
       filename: '/src/app/test.directive.ts',
       options: [{ suffixes: ['page'] }],
     },
+    {
+      code: `
+        @Component({
+      selector: 'sg-foo-bar',
+      templateUrl: './test.component.html',
+    })
+    class TestComponent {}
+  `,
+      filename: '/src/app/test.component.spec.ts',
+    },
   ],
   invalid: [
     {

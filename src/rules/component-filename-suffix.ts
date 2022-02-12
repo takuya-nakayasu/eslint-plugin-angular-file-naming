@@ -2,6 +2,7 @@ import { TSESLint, TSESTree } from '@typescript-eslint/experimental-utils';
 import {
   COMPONENT_CLASS_DECORATOR,
   getFilenameSuffix,
+  isTestFile,
   STYLE_GUIDE_LINK,
 } from '../utils/utils';
 
@@ -43,6 +44,9 @@ export const componentFilenameSuffix: TSESLint.RuleModule<
         const filename = context.getFilename();
         const suffixes = context.options[0]?.suffixes || ['component'];
         const filenameSuffix = getFilenameSuffix(filename);
+        if (isTestFile(filenameSuffix)) {
+          return;
+        }
         if (
           !filenameSuffix ||
           !(filenameSuffix.length > 1) ||

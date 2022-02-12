@@ -56,6 +56,15 @@ export class TestGuard {}
       filename: '/src/app/test.component.ts',
       options: [{ suffixes: ['service'] }],
     },
+    {
+      code: `
+@Injectable({
+  providedIn: 'root',
+})
+export class TestService {}
+  `,
+      filename: '/src/app/test.service.spec.ts',
+    },
   ],
   invalid: [
     {
