@@ -65,6 +65,16 @@ export class TestService {}
   `,
       filename: '/src/app/test.service.spec.ts',
     },
+    {
+      code: `
+@Injectable({
+  providedIn: 'root',
+})
+export class TestServiceMock {}
+  `,
+      filename: '/src/app/test.service.mock.ts',
+      options: [{ suffixes: ['service', 'service.mock', 'mock'] }],
+    },
   ],
   invalid: [
     {
