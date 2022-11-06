@@ -77,6 +77,39 @@ export class AppModule { }
       filename: '/src/app/test.component.ts',
       options: [{ suffixes: ['module'] }],
     },
+    {
+      code: `
+      @NgModule({
+        declarations: [
+          AppComponent
+        ],
+        imports: [
+          BrowserModule
+        ],
+        providers: [],
+        bootstrap: [AppComponent]
+      })
+      export class AppModule { }
+  `,
+      filename: 'C:\\foo\\bar\\baz\\test.module.ts',
+    },
+    {
+      code: `
+      @NgModule({
+        declarations: [
+          AppComponent
+        ],
+        imports: [
+          BrowserModule
+        ],
+        providers: [],
+        bootstrap: [AppComponent]
+      })
+      export class AppModule { }
+  `,
+      filename: 'C:\\foo\\bar\\baz\\test.modules.ts',
+      options: [{ suffixes: ['modules'] }],
+    },
   ],
   invalid: [
     {
