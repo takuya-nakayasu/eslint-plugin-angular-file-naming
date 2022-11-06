@@ -82,7 +82,7 @@ tester.run('pipeFilenameSuffix', pipeFilenameSuffix, {
         class Test {}
   `,
       filename: 'C:\\foo\\bar\\baz\\test.pipes.ts',
-      options: [{ suffixes: ['pipess'] }],
+      options: [{ suffixes: ['pipes'] }],
     },
   ],
   invalid: [
