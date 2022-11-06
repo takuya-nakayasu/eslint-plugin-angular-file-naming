@@ -23,10 +23,12 @@ export const INJECTABLE_CLASS_DECORATOR =
  * @param {string} filename
  * @returns {(RegExpMatchArray | null)}
  */
-export function getFilenameSuffix(filename: string): RegExpMatchArray | null {
-  return filename.match(/(?:\/|\\).+\.(.+)\.ts$/);
+export function getFilenameSuffix(filepath: string): RegExpMatchArray | null {
+  const filename = filepath.replace(/^.*[\\\/]/, '');
+  const suffixAndExtension = filename.substring(filename.indexOf('.') + 1);
+  return suffixAndExtension.match(/(.+)\.ts$/);
 }
 
 export function isTestFile(filenameSuffix: RegExpMatchArray | null): boolean {
-  return !!(filenameSuffix && filenameSuffix.length > 1 && filenameSuffix[1] === 'spec');
+  return !!(filenameSuffix && filenameSuffix.length > 1 && filenameSuffix[1].includes('.spec'));
 }
