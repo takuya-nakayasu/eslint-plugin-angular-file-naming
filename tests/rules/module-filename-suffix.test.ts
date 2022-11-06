@@ -110,6 +110,23 @@ export class AppModule { }
       filename: 'C:\\foo\\bar\\baz\\test.modules.ts',
       options: [{ suffixes: ['modules'] }],
     },
+    {
+      code: `
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+  `,
+      filename: '/src/app/app.module.mock.ts',
+      options: [{ suffixes: ['module.mock'] }],
+    },
   ],
   invalid: [
     {

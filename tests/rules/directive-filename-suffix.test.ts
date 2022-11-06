@@ -84,6 +84,16 @@ tester.run('directiveFilenameSuffix', directiveFilenameSuffix, {
       filename: 'C:\\foo\\bar\\baz\\test.directives.ts',
       options: [{ suffixes: ['directives'] }],
     },
+    {
+      code: `
+    @Directive({
+      selector: 'sgBarFoo'
+    })
+    class TestDirective {}
+  `,
+      filename: '/src/app/test.directive.mock.ts',
+      options: [{ suffixes: ['directive.mock'] }],
+    },
   ],
   invalid: [
     {

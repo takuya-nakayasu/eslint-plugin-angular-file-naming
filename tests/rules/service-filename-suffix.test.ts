@@ -73,7 +73,7 @@ export class TestService {}
 export class TestServiceMock {}
   `,
       filename: '/src/app/test.service.mock.ts',
-      options: [{ suffixes: ['service', 'service.mock'] }],
+      options: [{ suffixes: ['service.mock'] }],
     },
     {
       code: `

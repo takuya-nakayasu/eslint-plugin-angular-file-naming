@@ -91,6 +91,17 @@ tester.run('componentFilenameSuffix', componentFilenameSuffix, {
       filename: 'C:\\foo\\bar\\baz\\test.page.ts',
       options: [{ suffixes: ['page'] }],
     },
+    {
+      code: `
+        @Component({
+      selector: 'sg-foo-bar',
+      templateUrl: './test.component.html',
+    })
+    class TestComponent {}
+  `,
+      filename: '/src/app/test.component.mock.ts',
+      options: [{ suffixes: ['component.mock'] }],
+    },
   ],
   invalid: [
     {

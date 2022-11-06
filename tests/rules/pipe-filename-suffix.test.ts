@@ -84,6 +84,16 @@ tester.run('pipeFilenameSuffix', pipeFilenameSuffix, {
       filename: 'C:\\foo\\bar\\baz\\test.pipes.ts',
       options: [{ suffixes: ['pipes'] }],
     },
+    {
+      code: `
+        @Pipe({
+          name: 'ngBarFoo'
+        })
+        class Test {}
+  `,
+      filename: '/src/app/test.pipe.mock.ts',
+      options: [{ suffixes: ['pipe.mock'] }],
+    },
   ],
   invalid: [
     {
