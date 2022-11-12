@@ -29,7 +29,7 @@ By default, the suffix will be `component`. You may pass an array of suffixes, f
   "angular-file-naming/component-filename-suffix": [
     "error",
     {
-      "suffixes": ["component", "page", "view"]
+      "suffixes": ["component", "page", "view", "component.mock"]
     }
   ]
 }
@@ -40,6 +40,7 @@ Examples of **incorrect** file name with the above options:
 ```
 app.comp.ts
 app.com.ts
+app.mock.ts
 ```
 
 Example of **correct** file name with the above options:
@@ -48,4 +49,5 @@ Example of **correct** file name with the above options:
 app.component.ts
 app.page.ts
 app.view.ts
+app.component.mock.ts
 ```

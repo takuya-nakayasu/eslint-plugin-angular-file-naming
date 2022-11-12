@@ -28,7 +28,7 @@ By default, the suffix will be `pipe`. You may pass an array of suffixes, for ex
   "angular-file-naming/pipe-filename-suffix": [
     "error",
     {
-      "suffixes": ["pipe", "filter"]
+      "suffixes": ["pipe", "filter", "filter.mock"]
     }
   ]
 }
@@ -39,6 +39,7 @@ Examples of **incorrect** file name with the above options:
 ```
 test.pip.ts
 test.p.ts
+test.mock.ts
 ```
 
 Example of **correct** file name with the above options:
@@ -46,4 +47,5 @@ Example of **correct** file name with the above options:
 ```
 test.pipe.ts
 test.filter.ts
+test.filter.mock.ts
 ```

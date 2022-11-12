@@ -28,7 +28,7 @@ By default, the suffix will be `service`. You may pass an array of suffixes, for
   "angular-file-naming/service-filename-suffix": [
     "error",
     {
-      "suffixes": ["service", "guard", "store"]
+      "suffixes": ["service", "guard", "store", "service.mock"]
     }
   ]
 }
@@ -39,6 +39,7 @@ Examples of **incorrect** file name with the above options:
 ```
 test.action.ts
 test.component.ts
+test.mock.ts
 ```
 
 Example of **correct** file name with the above options:
@@ -47,4 +48,5 @@ Example of **correct** file name with the above options:
 test.service.ts
 test.guard.ts
 test.store.ts
+test.service.mock.ts
 ```

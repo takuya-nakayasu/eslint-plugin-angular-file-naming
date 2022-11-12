@@ -77,7 +77,7 @@ module.exports = {
     "angular-file-naming/component-filename-suffix": [
       "error",
       {
-        "suffixes": ["component", "page", "view"]
+        "suffixes": ["component", "page", "view", "component.mock"]
       }
     ],
     "angular-file-naming/directive-filename-suffix": "error",
@@ -86,7 +86,7 @@ module.exports = {
     "angular-file-naming/service-filename-suffix": [
       "error",
       {
-        "suffixes": ["service", "guard", "store"]
+        "suffixes": ["service", "guard", "store", "service.mock"]
       }
     ],
   ]
@@ -98,8 +98,10 @@ Examples of **incorrect** file name with the above configuration:
 
 ```
 app.comp.ts
+app.mock.ts
 sample.ts
 test.filter.ts
+test.mock.ts
 ```
 
 Example of **correct** file name with the above configuration:
@@ -108,10 +110,12 @@ Example of **correct** file name with the above configuration:
 app.component.ts
 app.page.ts
 app.view.ts
+app.component.mock.ts
 test.directive.ts
 app.module.ts
 sample.pipe.ts
 test.service.ts
+test.service.mock.ts
 test.guard.ts
 test.store.ts
 ```
