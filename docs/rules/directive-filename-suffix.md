@@ -28,7 +28,7 @@ By default, the suffix will be `directive`. You may pass an array of suffixes, f
   "angular-file-naming/directive-filename-suffix": [
     "error",
     {
-      "suffixes": ["directive", "validator"]
+      "suffixes": ["directive", "validator", "directive.mock"]
     }
   ]
 }
@@ -39,6 +39,7 @@ Examples of **incorrect** file name with the above options:
 ```
 test.direc.ts
 test.dire.ts
+test.mock.ts
 ```
 
 Example of **correct** file name with the above options:
@@ -46,4 +47,5 @@ Example of **correct** file name with the above options:
 ```
 test.directive.ts
 test.validator.ts
+test.directive.mock.ts
 ```

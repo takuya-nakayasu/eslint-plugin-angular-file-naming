@@ -27,7 +27,7 @@ By default, the suffix will be `module`. You may pass an array of suffixes, for 
   "angular-file-naming/module-filename-suffix": [
     "error",
     {
-      "suffixes": ["module", "mod"]
+      "suffixes": ["module", "mod", "module.mock"]
     }
   ]
 }
@@ -37,6 +37,7 @@ Examples of **incorrect** file name with the above options:
 
 ```
 test.m.ts
+test.mock.ts
 ```
 
 Example of **correct** file name with the above options:
@@ -44,4 +45,5 @@ Example of **correct** file name with the above options:
 ```
 test.module.ts
 test.mod.ts
+test.module.mock.ts
 ```
