@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-angular-file-naming",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "ESLint plugin for Angular file naming conventions",
   "author": {
     "name": "Takuya Nakayasu",
